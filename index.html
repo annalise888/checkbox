@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>checkbox</title>
+	
+	<script language = "javascript">
+		function changeChecks() {
+			var checkall_label = document.getElementById("checkall_label");
+			var checks = document.getElementsByClassName("checks");
+			if (checkall_label.innerHTML == "Check all:") {
+				checkall_label.innerHTML = "Uncheck all:";
+				
+				for (i=0;i<checks.length;i++) {
+					checks[i].checked=true;
+				}
+				
+			} else if (checkall_label.innerHTML == "Uncheck all:") {
+				checkall_label.innerHTML = "Check all:";
+				
+				for (i=0;i<checks.length;i++) {
+					checks[i].checked=false;
+				}
+			}
+		}
+	</script>
+	
+</head>
+	
+	
+
+<body>
+	
+	<form>
+		<label for = "checkall" id = "checkall_label">Check all:</label>
+		<input type="checkbox" id = "checkall" onclick="changeChecks();"><br>
+		<input type="checkbox" class="checks">
+		<input type="checkbox" class="checks">
+		<input type="checkbox" class="checks">
+		<input type="checkbox" class="checks">
+	</form>
+	
+</body>
+</html>
